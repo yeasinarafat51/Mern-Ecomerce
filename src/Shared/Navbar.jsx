@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../images/logo.png'
 
 
 const Navbar = () => {
@@ -30,16 +31,17 @@ const Navbar = () => {
             <li><Link>Item 3</Link></li>
             </ul>
           </div>
-          <Link className="btn btn-ghost text-xl">daisyUI</Link>
+          <Link className="btn btn-ghost text-xl"><img src={logo} width={50} className='' alt="logo" />MERN E-Commerce</Link>
         </div>
         <div className="mx-auto hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li to='/'><Link>Home</Link></li>
             <li>
-            <Link to='/product'>Product</Link>
+            <Link to='/product'>Products</Link>
             </li>
-            <li><Link to='/'>product List</Link></li>
-            <li to='/'><Link>Profile</Link></li>
+            <li><Link to='/'>Cart</Link></li>
+            <li><Link  to='/'>Profile</Link></li>
+            <li><Link  to='/'>Dashboard</Link></li>
           </ul>
         </div>
        

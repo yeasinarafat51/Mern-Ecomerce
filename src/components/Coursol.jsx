@@ -1,37 +1,38 @@
-import earphone from '../images/hero/earphone.jpg'
-import camera from '../images/hero/camera.jpg'
-import watch from '../images/hero/smartwatch.jpg'
+
+import delis from '../images/hero/delis.jpg'
+import delis1 from '../images/hero/delis1.avif'
+import delis2 from '../images/hero/delis2.jpg'
+import delis3 from '../images/hero/delis3.jpg'
+
+
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 const Coursol = () => {
     return (
-        <Carousel className='h-[200px]' >
+       <div>
+         <Carousel  >
         <div  >
-            <img src={earphone}  alt=""/>
+            <img src={delis}  alt=""/>
           
            
         </div>
         <div>
-            <img src={camera}  alt=""/>
+            <img src={delis1}  alt=""/>
            
         </div>
         <div>
-            <img src={watch}  alt=""/>
+            <img src={delis2}  alt=""/>
             
         </div>
-        {/* <div>
-            <img src={cos1} />
-           
-        </div>
         <div>
-            <img src={bag2} />
-           
-        </div>
-        <div>
-            <img src={bag3} />
+            <img src={delis3}  alt=""/>
             
-        </div> */}
+        </div>
+       
+       
     </Carousel>
+       </div>
     );
 };
 
