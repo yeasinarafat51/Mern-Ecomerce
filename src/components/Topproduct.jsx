@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom';
 import products from '../data/Products.json'
+
+import './Topproduct.css'
 
 
 const Topproduct = () => {
+    
     console.log(products)
     let Topproducts = [];
     for(let i=0 ;i<3; i++) {
@@ -22,9 +26,11 @@ const Topproduct = () => {
                 Topproducts.map(product =>{
                     return(
                         <>
-                       <div className="card bg-base-100 w-96 shadow  ">
+                      <Link to={`/product/${product.id}`}>
+                      <div className="card bg-base-100 w-96 shadow  ">
   <figure>
-    <img
+  
+   <img className='img1'
       src={product.strCategoryThumb}
       alt="Shoes" />
   </figure>
@@ -35,11 +41,11 @@ const Topproduct = () => {
    </div>
     {/* <p>{product.strCategoryDescription.slice(0,40)}</p> */}
     <div className="flex justify-evenly mt-4">
-      <button className="btn btn-success mx-4">Detalis </button>
+    <button className="btn btn-success mx-4">Detalis </button>
       <button className="btn btn-info">Orders </button>
     </div>
   </div>
-</div>
+</div></Link>
                         </>
 
                     )
