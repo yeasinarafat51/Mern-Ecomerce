@@ -1,4 +1,7 @@
 .img1{
-    transform: rotateY(150deg);
-     transition: width 2s, height 2s, transform 2s;
+  
+     transition:  transform 0.5s;
+  }
+  .img1:hober{
+    transform: scale(1.2);
   }

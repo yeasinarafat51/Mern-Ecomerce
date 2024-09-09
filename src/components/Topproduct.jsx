@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import products from '../data/Products.json'
 
 import './Topproduct.css'
 
 
 const Topproduct = () => {
+    const Navigate = useNavigate()
     
     console.log(products)
     let Topproducts = [];
@@ -26,13 +27,12 @@ const Topproduct = () => {
                 Topproducts.map(product =>{
                     return(
                         <>
-                      <Link to={`/product/${product.id}`}>
-                      <div className="card bg-base-100 w-96 shadow  ">
+                     <div className="card bg-base-100 w-96 shadow  ">
   <figure>
   
-   <img className='img1'
+   <Link to={`/product/${product.id}`}><img className='img1 m-4'
       src={product.strCategoryThumb}
-      alt="Shoes" />
+      alt="Shoes" /></Link>
   </figure>
   <div className=" flex justify-evenly mb-8">
    <div>
@@ -41,11 +41,13 @@ const Topproduct = () => {
    </div>
     {/* <p>{product.strCategoryDescription.slice(0,40)}</p> */}
     <div className="flex justify-evenly mt-4">
-    <button className="btn btn-success mx-4">Detalis </button>
+   <div onClick={()=>{Navigate(`/product/${product.id}`)}}>
+   <button className="btn btn-success mx-4">Detalis </button>
+   </div>
       <button className="btn btn-info">Orders </button>
     </div>
   </div>
-</div></Link>
+</div>
                         </>
 
                     )

@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className="">
+      <div className="bg-[#c4c4c44d]">
         <RouterProvider router={router}></RouterProvider>
 
       </div>
