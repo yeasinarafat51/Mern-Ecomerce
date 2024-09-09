@@ -2,10 +2,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import products from '../data/Products.json'
 
 import './Topproduct.css'
+import { useState } from 'react';
 
 
 const Topproduct = () => {
     const Navigate = useNavigate()
+    const [cart , setCart] = useState([]);
     
     console.log(products)
     let Topproducts = [];
@@ -19,6 +21,13 @@ const Topproduct = () => {
         }
 
     }
+    const addtocart = (product) =>{
+        const newcart = [...cart ,product]
+        console.log(newcart)
+        setCart(newcart)
+
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
     return (
         <div className="my-12 py-12 bg-[#c4c4c44d] ">
             <h1 className="text-xl font-semibold text-center pt-8">Top  products of This Week</h1>
@@ -44,7 +53,7 @@ const Topproduct = () => {
    <div onClick={()=>{Navigate(`/product/${product.id}`)}}>
    <button className="btn btn-success mx-4">Detalis </button>
    </div>
-      <button className="btn btn-info">Orders </button>
+   <button onClick={()=>addtocart(product)} className="btn btn-secondary">Cart</button>
     </div>
   </div>
 </div>

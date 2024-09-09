@@ -1,10 +1,19 @@
 
 import { useParams } from 'react-router-dom';
 import products from '../data/Products.json'
+import { useState } from 'react';
 
 const Meals = () => {
     const {id} = useParams()
     const product = products.find(product =>product.id === id)
+    const [cart , setCart] = useState([]);
+    const addtocart = (product) =>{
+        const newcart = [...cart ,product]
+        console.log(newcart)
+        setCart(newcart)
+
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
     console.log(id)
     return (
         <div className='py-12 bg-[#c4c4c44d]'>
@@ -15,7 +24,7 @@ const Meals = () => {
       src={product.strCategoryThumb}
       alt="Movie" />
       <div className='flex justify-center gap-4 mt-12'>
-      <button className="btn btn-warning">Add to Cart</button>
+      <button onClick={()=>addtocart(product)} className="btn btn-warning">Add to Cart</button>
       <button className="btn btn-info">Buy Now</button>
       </div>
   </figure>

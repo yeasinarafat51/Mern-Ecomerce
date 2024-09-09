@@ -5,6 +5,7 @@ import Layout from "../Layout/Layout";
 import Home from "../Pages/Home";
 import Meals from "../Pages/Meals";
 import Allmeals from "../Pages/Allmeals";
+import Cart from "../Pages/Cart";
 
 // const router = createBrowserRouternpm install react-router-dom
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path:'/product/:id',
                 element:<Meals/>
+            },
+            {
+                path:'/cart',
+                element:<Cart/>
             },
         ]
     }

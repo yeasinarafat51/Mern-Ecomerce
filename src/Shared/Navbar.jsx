@@ -39,9 +39,9 @@ const Navbar = () => {
             <li>
             <Link to='/product'>Meals</Link>
             </li>
-            <li><Link to='/'>Cart</Link></li>
+            <li><Link to='/cart'>Cart</Link></li>
             <li><Link  to='/'>Profile</Link></li>
-            <li><Link  to='/'>Dashboard</Link></li>
+            <li><Link  to='/dashboard'>Dashboard</Link></li>
           </ul>
         </div>
        
